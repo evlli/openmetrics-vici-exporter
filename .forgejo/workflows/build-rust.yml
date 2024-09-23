@@ -9,5 +9,5 @@ on:
 
 jobs:
   build:
-    uses: famedly/github-workflows/.github/workflows/rust.yml@main
+    uses: https://github.com/famedly/github-workflows/.github/workflows/rust.yml@main
     secrets: inherit
