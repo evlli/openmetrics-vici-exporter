@@ -31,8 +31,8 @@ async fn main() -> anyhow::Result<()> {
             let mut labels = sa_values.into_labels();
             labels.push((&("sa_name", sa_name.clone())).into());
 
-            gauge!("sa_uptime", sa_values.established as f64, labels.clone());
-            gauge!("sa_rekey_time", sa_values.rekey_time as f64, labels.clone());
+            gauge!("sa_uptime", labels.clone()).set(sa_values.established as f64);
+            gauge!("sa_rekey_time", labels.clone()).set(sa_values.rekey_time as f64);
             //gauge!("sa_state")
             for (sa_child_name, sa_child_values) in sa_values.child_security_associations {
                 let mut child_labels = sa_child_values.into_labels();
@@ -40,24 +40,20 @@ async fn main() -> anyhow::Result<()> {
                 child_labels.push((&("sa_child_name", sa_child_name)).into());
                 counter!(
                     "sa_child_bytes_in",
-                    sa_child_values.bytes_in,
                     child_labels.clone()
-                );
+                ).absolute(sa_child_values.bytes_in);
                 counter!(
                     "sa_child_bytes_out",
-                    sa_child_values.bytes_out,
                     child_labels.clone()
-                );
+                ).absolute(sa_child_values.bytes_out);
                 counter!(
                     "sa_child_packets_in",
-                    sa_child_values.packets_in,
                     child_labels.clone()
-                );
+                ).absolute(sa_child_values.packets_in);
                 counter!(
                     "sa_child_packets_out",
-                    sa_child_values.packets_out,
                     child_labels.clone()
-                );
+                ).absolute(sa_child_values.packets_out);
             }
         }
         interval.tick().await;
