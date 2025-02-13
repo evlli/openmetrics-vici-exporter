@@ -1,3 +1,4 @@
+---
 name: "Build legacy Nix package on Ubuntu"
 
 on:
