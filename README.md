@@ -71,7 +71,11 @@ sudo usermod -aG vici $(whoami)
 
 ## Authors
 
-This software is authored and maintained as open-source by Famedly's Infrastructure Team.
+This software was forked from Famedly after I left the company in 2024.
+
+- Evelyn Alicke <dev@evl.li>
+
+This software was authored as open-source by Famedly in 2023. 
 
 - Evelyn Alicke <e.alicke@famedly.com>
 - Famedly GmbH <info@famedly.com>

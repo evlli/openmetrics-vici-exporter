@@ -4,6 +4,7 @@ use tokio::time::{interval, Duration, MissedTickBehavior};
 
 pub mod config;
 pub mod vici;
+pub mod openmetrics;
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
