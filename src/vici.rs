@@ -1,6 +1,6 @@
 #![allow(dead_code)]
 
-use serde::{de::value::BoolDeserializer, Deserialize};
+use serde::Deserialize;
 use std::collections::HashMap;
 
 use futures_util::stream::StreamExt;
