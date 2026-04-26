@@ -10,26 +10,23 @@ as of `v0.1.0` the following metrics are exporterd:
 | name | |
 |------|-|
 |`sa_uptime`| seconds since state changed to up |
-|`sa_rekey_time`||
+|`sa_rekey_time`| seconds to next renewal |
 
-| name |
-|`sa_child_bytes_in`|
-|`sa_child_bytes_out`|
-|`sa_child_packets_in`|
-|`sa_child_packets_out`|
+| name | |
+|------|-|
+|`sa_child_bytes_in`| bytes recieved |
+|`sa_child_bytes_out`| bytes send |
+|`sa_child_packets_in`| packets received |
+|`sa_child_packets_out`| packets sent |
 
 ### Planned Features:
 * `v0.2.0`
+    * rewrite to use open-metrics protobuf format
+* `v0.3.0`
     * an info metric showing the applied configuration
     * an enum metric showing the current state / queued jobs per connection
 
 ## Usage
-
-### Deployment
-You have a few options avalible:
-1. [Binary Releases](/releases)
-2. Docker Image
-    * `docker-oss.nexus.famedly.de/openmetrics-vici-exporter
 
 ### Configuration
 
@@ -71,7 +68,14 @@ sudo usermod -aG vici $(whoami)
 
 ## Authors
 
-This software is authored and maintained as open-source by Famedly's Infrastructure Team.
+This software was intially authored and maintained as open-source by Famedly's Infrastructure Team.
+In 2025, evlli hard-forked the project for further development.
+
+**since 2025**
+
+- Evelyn 'evlli' Alicke <dev@evl.li>
+
+**2023 to 2024**
 
 - Evelyn Alicke <e.alicke@famedly.com>
 - Famedly GmbH <info@famedly.com>
