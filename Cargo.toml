@@ -1,16 +1,16 @@
 [package]
 name = "openmetrics-vici-exporter"
-version = "0.1.0"
-edition = "2021"
+version = "0.2.0"
+edition = "2024"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-config = { version = "0.13.1", features = ["yaml"] }
+config = { version = "0.15", features = ["yaml"] }
 serde = { version = "1.0", features = ["derive"] }
-metrics = "0.21.0"
-metrics-exporter-prometheus = { version = "0.12.1", features = ["http-listener"] }
-futures-util = "0.3.25"
-tokio = { version = "1.21.2", features = ["rt-multi-thread","macros"] }
+metrics = "0.24"
+metrics-exporter-prometheus = { version = "0.16", features = ["http-listener"] }
+futures-util = "0.3"
+tokio = { version = "1.43", features = ["rt-multi-thread","macros"] }
 rsvici = "0.1"
-anyhow = "1.0.70"
+anyhow = "1.0"
